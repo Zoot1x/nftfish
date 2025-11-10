@@ -91,15 +91,15 @@ const RecentWins = ({ latestWin }: RecentWinsProps) => {
               <img
                 src={win.gift.image}
                 alt={win.gift.name}
-                className="w-12 h-12 object-cover rounded-lg"
+                className="w-10 h-10 md:w-12 md:h-12 object-cover rounded-lg"
               />
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-sm truncate">{win.username}</p>
+                <p className="font-semibold text-xs md:text-sm truncate">{win.username}</p>
                 <p className={`text-xs ${getRarityColor(win.gift.rarity)}`}>
                   {t("won")} {win.gift.name}
                 </p>
               </div>
-              <span className="text-xs text-muted-foreground whitespace-nowrap">
+              <span className="text-[10px] md:text-xs text-muted-foreground whitespace-nowrap">
                 {Math.floor((Date.now() - win.timestamp) / 1000)}s {t("ago")}
               </span>
             </div>

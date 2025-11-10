@@ -42,7 +42,7 @@ const Inventory = ({ open, onOpenChange, gifts, onWithdraw }: InventoryProps) =>
                 <img
                   src={gift.image}
                   alt={gift.name}
-                  className="w-full h-40 object-cover rounded-lg mb-3"
+                  className="w-full h-32 md:h-40 object-cover rounded-lg mb-2 md:mb-3"
                 />
                 <h3 className="font-bold text-lg mb-1">{gift.name}</h3>
                 <p className={`text-sm capitalize mb-3 ${getRarityColor(gift.rarity)}`}>

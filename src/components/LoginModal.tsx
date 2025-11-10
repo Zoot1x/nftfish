@@ -15,7 +15,6 @@ const LoginModal = ({ open, onOpenChange, onLogin }: LoginModalProps) => {
   const handleLogin = () => {
     // В реальном приложении здесь будет авторизация через Telegram
     window.open("https://t.me/flowers_auth_bot", "_blank");
-    onLogin();
     onOpenChange(false);
   };
 

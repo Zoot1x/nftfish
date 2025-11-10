@@ -61,7 +61,8 @@ const Roulette = ({ spins, onSpin, onNoSpins }: RouletteProps) => {
         g.id === wonGift.id && i > middleIndex && i < middleIndex + 20
       );
       
-      const cardWidth = 140; // Ширина одной карточки + gap
+      const isMobile = window.innerWidth < 768;
+      const cardWidth = isMobile ? 100 : 140; // Ширина одной карточки + gap на мобильных и десктопе
       const containerWidth = rouletteRef.current.offsetWidth;
       const centerOffset = containerWidth / 2 - 60; // Центрируем по середине контейнера
       
