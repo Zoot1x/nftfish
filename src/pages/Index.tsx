@@ -3,14 +3,18 @@ import Header from "@/components/Header";
 import Roulette from "@/components/Roulette";
 import Inventory from "@/components/Inventory";
 import SubscriptionModal from "@/components/SubscriptionModal";
+import SubscriptionBanner from "@/components/SubscriptionBanner";
 import LoginModal from "@/components/LoginModal";
 import RecentWins from "@/components/RecentWins";
 import { Gift } from "@/config/gifts";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useUserData } from "@/hooks/useUserData";
 
 const Index = () => {
   const { t } = useLanguage();
+  const { isLoaded, loadUserData, saveUserData, getDefaultUserData, userId } = useUserData();
+  
   const [spins, setSpins] = useState(0);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [hasSubscribed, setHasSubscribed] = useState(false);
@@ -20,13 +24,30 @@ const Index = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [latestWin, setLatestWin] = useState<{ gift: Gift } | undefined>();
 
-  // Загружаем состояние подписки из localStorage
+  // Загружаем данные пользователя при загрузке страницы
   useEffect(() => {
-    const subscribed = localStorage.getItem('hasSubscribed');
-    if (subscribed === 'true') {
-      setHasSubscribed(true);
+    if (!isLoaded) return;
+    
+    const userData = loadUserData();
+    if (userData) {
+      setSpins(userData.spins);
+      setInventory(userData.inventory);
+      setHasSubscribed(userData.hasSubscribed);
+      setIsAuthenticated(userData.isAuthenticated);
     }
-  }, []);
+  }, [isLoaded]);
+
+  // Сохраняем данные пользователя при изменении
+  useEffect(() => {
+    if (!isLoaded || !userId) return;
+    
+    saveUserData({
+      spins,
+      inventory,
+      hasSubscribed,
+      isAuthenticated,
+    });
+  }, [spins, inventory, hasSubscribed, isAuthenticated, isLoaded, userId, saveUserData]);
 
   const handleSpin = (wonGift: Gift) => {
     setSpins((prev) => prev - 1);
@@ -54,7 +75,6 @@ const Index = () => {
 
     setSpins((prev) => prev + 3);
     setHasSubscribed(true);
-    localStorage.setItem('hasSubscribed', 'true');
     
     toast.success(t('subscribed'), {
       description: t('gotSpins'),
@@ -85,9 +105,15 @@ const Index = () => {
       <Header
         spins={spins}
         isAuthenticated={isAuthenticated}
+        inventoryCount={inventory.length}
+        userId={userId}
         onLoginClick={() => setShowLogin(true)}
         onInventoryClick={() => setShowInventory(true)}
       />
+
+      {!hasSubscribed && (
+        <SubscriptionBanner onSubscribe={() => setShowSubscription(true)} />
+      )}
 
       <main className="container mx-auto px-4">
         {/* Recent Wins Section */}

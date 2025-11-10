@@ -8,12 +8,17 @@ import { useLanguage } from "@/contexts/LanguageContext";
 interface HeaderProps {
   spins: number;
   isAuthenticated: boolean;
+  inventoryCount?: number;
+  userId?: string;
   onLoginClick: () => void;
   onInventoryClick: () => void;
 }
 
-const Header = ({ spins, isAuthenticated, onLoginClick, onInventoryClick }: HeaderProps) => {
+const Header = ({ spins, isAuthenticated, inventoryCount = 0, userId = '', onLoginClick, onInventoryClick }: HeaderProps) => {
   const { t } = useLanguage();
+
+  // Форматируем ID для отображения (показываем последние 8 символов)
+  const displayId = userId ? userId.slice(-8).toUpperCase() : 'ANON';
 
   return (
     <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
@@ -22,12 +27,12 @@ const Header = ({ spins, isAuthenticated, onLoginClick, onInventoryClick }: Head
           {/* Left: Avatar and Username */}
           <div className="flex items-center gap-2 md:gap-3">
             <Avatar className="h-10 w-10 md:h-12 md:w-12 border-2 border-primary shadow-glow-cyan">
-              <AvatarImage src="https://api.dicebear.com/7.x/avataaars/svg?seed=anonymous" />
-              <AvatarFallback>AN</AvatarFallback>
+              <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${userId}`} />
+              <AvatarFallback>{displayId.slice(0, 2)}</AvatarFallback>
             </Avatar>
             <div>
               <h2 className="font-bold text-sm md:text-base text-foreground">{t('anonymous')}</h2>
-              <p className="text-xs md:text-sm text-muted-foreground">ID: #123456</p>
+              <p className="text-xs md:text-sm text-muted-foreground">ID: #{displayId}</p>
             </div>
           </div>
 
@@ -48,9 +53,14 @@ const Header = ({ spins, isAuthenticated, onLoginClick, onInventoryClick }: Head
               </Button>
             )}
 
-            <Button variant="outline" onClick={onInventoryClick} className="gap-2">
+            <Button variant="outline" onClick={onInventoryClick} className="gap-2 relative">
               <Package className="h-4 w-4" />
               {t('inventory')}
+              {inventoryCount > 0 && (
+                <span className="absolute -top-2 -right-2 flex items-center justify-center h-5 w-5 rounded-full bg-destructive text-white text-xs font-bold">
+                  {inventoryCount}
+                </span>
+              )}
             </Button>
           </div>
 
@@ -63,6 +73,7 @@ const Header = ({ spins, isAuthenticated, onLoginClick, onInventoryClick }: Head
             <MobileMenu
               spins={spins}
               isAuthenticated={isAuthenticated}
+              inventoryCount={inventoryCount}
               onLoginClick={onLoginClick}
               onInventoryClick={onInventoryClick}
             />

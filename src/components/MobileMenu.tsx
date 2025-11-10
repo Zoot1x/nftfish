@@ -7,18 +7,24 @@ import LanguageSelector from "./LanguageSelector";
 interface MobileMenuProps {
   spins: number;
   isAuthenticated: boolean;
+  inventoryCount?: number;
   onLoginClick: () => void;
   onInventoryClick: () => void;
 }
 
-const MobileMenu = ({ spins, isAuthenticated, onLoginClick, onInventoryClick }: MobileMenuProps) => {
+const MobileMenu = ({ spins, isAuthenticated, inventoryCount = 0, onLoginClick, onInventoryClick }: MobileMenuProps) => {
   const { t } = useLanguage();
 
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden">
+        <Button variant="ghost" size="icon" className="md:hidden relative">
           <Menu className="h-5 w-5" />
+          {inventoryCount > 0 && (
+            <span className="absolute -top-1 -right-1 flex items-center justify-center h-5 w-5 rounded-full bg-destructive text-white text-xs font-bold">
+              {inventoryCount}
+            </span>
+          )}
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[280px] bg-card">
@@ -43,9 +49,14 @@ const MobileMenu = ({ spins, isAuthenticated, onLoginClick, onInventoryClick }: 
                 {t('login')}
               </Button>
             )}
-            <Button variant="outline" onClick={onInventoryClick} className="w-full justify-start gap-2">
+            <Button variant="outline" onClick={onInventoryClick} className="w-full justify-start gap-2 relative">
               <Package className="h-4 w-4" />
               {t('inventory')}
+              {inventoryCount > 0 && (
+                <span className="absolute right-3 flex items-center justify-center h-5 w-5 rounded-full bg-destructive text-white text-xs font-bold">
+                  {inventoryCount}
+                </span>
+              )}
             </Button>
           </div>
         </div>

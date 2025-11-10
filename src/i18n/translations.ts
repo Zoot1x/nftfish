@@ -33,6 +33,10 @@ export const translations = {
     subscribeButton: "Подписаться на канал",
     redirectNote: "Нажимая кнопку, вы будете перенаправлены в Telegram",
     
+    // Subscription Banner
+    subscriptionBanner: "За подписку на канал",
+    freeBonusSpins: "бесплатные 3 спина",
+    
     // Login Modal
     authRequired: "Требуется авторизация",
     loginToWithdraw: "Войдите, чтобы вывести подарок",
@@ -89,6 +93,10 @@ export const translations = {
     subscribeNote: "Subscribe and get the ability to spin right away!",
     subscribeButton: "Subscribe to Channel",
     redirectNote: "By clicking the button, you will be redirected to Telegram",
+    
+    // Subscription Banner
+    subscriptionBanner: "Subscribe to the channel",
+    freeBonusSpins: "get 3 free spins",
     authRequired: "Authorization Required",
     loginToWithdraw: "Login to withdraw gift",
     loginDesc: "To withdraw gifts, you need to login via Telegram",
@@ -138,6 +146,10 @@ export const translations = {
     subscribeNote: "¡Suscríbete y obtén la posibilidad de girar de inmediato!",
     subscribeButton: "Suscribirse al Canal",
     redirectNote: "Al hacer clic en el botón, serás redirigido a Telegram",
+    
+    // Subscription Banner
+    subscriptionBanner: "Suscríbete al canal",
+    freeBonusSpins: "obtén 3 giros gratis",
     authRequired: "Autorización Requerida",
     loginToWithdraw: "Inicia sesión para retirar el regalo",
     loginDesc: "Para retirar regalos, debes iniciar sesión a través de Telegram",
@@ -187,6 +199,11 @@ export const translations = {
     subscribeNote: "Iscriviti e ottieni subito la possibilità di girare!",
     subscribeButton: "Iscriviti al Canale",
     redirectNote: "Cliccando il pulsante, sarai reindirizzato a Telegram",
+    
+    // Subscription Banner
+    subscriptionBanner: "Iscriviti al canale",
+    freeBonusSpins: "ottieni 3 giri gratis",
+    
     authRequired: "Autorizzazione Richiesta",
     loginToWithdraw: "Accedi per ritirare il regalo",
     loginDesc: "Per ritirare i regali, devi accedere tramite Telegram",
@@ -236,6 +253,11 @@ export const translations = {
     subscribeNote: "立即订阅并获得旋转机会！",
     subscribeButton: "订阅频道",
     redirectNote: "点击按钮后，您将被重定向到Telegram",
+    
+    // Subscription Banner
+    subscriptionBanner: "订阅频道",
+    freeBonusSpins: "获得3次免费旋转",
+    
     authRequired: "需要授权",
     loginToWithdraw: "登录以提取礼物",
     loginDesc: "要提取礼物，您需要通过Telegram登录",
@@ -285,6 +307,11 @@ export const translations = {
     subscribeNote: "הירשם וקבל את היכולת לסובב מיד!",
     subscribeButton: "הירשם לערוץ",
     redirectNote: "בלחיצה על הכפתור, תועבר לטלגרם",
+    
+    // Subscription Banner
+    subscriptionBanner: "הירשם לערוץ",
+    freeBonusSpins: "קבל 3 סיבובים חינם",
+    
     authRequired: "נדרשת הרשאה",
     loginToWithdraw: "התחבר כדי למשוך מתנה",
     loginDesc: "כדי למשוך מתנות, עליך להתחבר דרך טלגרם",
@@ -334,6 +361,11 @@ export const translations = {
     subscribeNote: "اشترك واحصل على القدرة على الدوران فوراً!",
     subscribeButton: "الاشتراك في القناة",
     redirectNote: "بالنقر على الزر، سيتم إعادة توجيهك إلى التليجرام",
+    
+    // Subscription Banner
+    subscriptionBanner: "اشترك في القناة",
+    freeBonusSpins: "احصل على 3 دورات مجانية",
+    
     authRequired: "مطلوب التفويض",
     loginToWithdraw: "تسجيل الدخول لسحب الهدية",
     loginDesc: "لسحب الهدايا، تحتاج إلى تسجيل الدخول عبر التليجرام",
@@ -383,6 +415,11 @@ export const translations = {
     subscribeNote: "Abonnez-vous et obtenez la possibilité de tourner immédiatement!",
     subscribeButton: "S'abonner à la Chaîne",
     redirectNote: "En cliquant sur le bouton, vous serez redirigé vers Telegram",
+    
+    // Subscription Banner
+    subscriptionBanner: "Abonnez-vous à la chaîne",
+    freeBonusSpins: "obtenez 3 tours gratuits",
+    
     authRequired: "Autorisation Requise",
     loginToWithdraw: "Connectez-vous pour retirer le cadeau",
     loginDesc: "Pour retirer des cadeaux, vous devez vous connecter via Telegram",
@@ -432,6 +469,11 @@ export const translations = {
     subscribeNote: "Abonniere und erhalte sofort die Möglichkeit zu drehen!",
     subscribeButton: "Kanal abonnieren",
     redirectNote: "Durch Klicken auf die Schaltfläche wirst du zu Telegram weitergeleitet",
+    
+    // Subscription Banner
+    subscriptionBanner: "Abonniere den Kanal",
+    freeBonusSpins: "erhalte 3 kostenlose Drehungen",
+    
     authRequired: "Autorisierung erforderlich",
     loginToWithdraw: "Melde dich an, um das Geschenk abzuheben",
     loginDesc: "Um Geschenke abzuheben, musst du dich über Telegram anmelden",
@@ -481,6 +523,11 @@ export const translations = {
     subscribeNote: "Inscreva-se e obtenha a capacidade de girar imediatamente!",
     subscribeButton: "Inscrever-se no Canal",
     redirectNote: "Ao clicar no botão, você será redirecionado para o Telegram",
+    
+    // Subscription Banner
+    subscriptionBanner: "Inscreva-se no canal",
+    freeBonusSpins: "obtenha 3 giros grátis",
+    
     authRequired: "Autorização Necessária",
     loginToWithdraw: "Entre para retirar o presente",
     loginDesc: "Para retirar presentes, você precisa entrar pelo Telegram",
@@ -530,6 +577,11 @@ export const translations = {
     subscribeNote: "購読してすぐにスピンする能力を得ましょう！",
     subscribeButton: "チャンネルを購読",
     redirectNote: "ボタンをクリックすると、Telegramにリダイレクトされます",
+    
+    // Subscription Banner
+    subscriptionBanner: "チャンネルを購読",
+    freeBonusSpins: "3回の無料スピンを獲得",
+    
     authRequired: "認証が必要",
     loginToWithdraw: "ギフトを引き出すにはログインしてください",
     loginDesc: "ギフトを引き出すには、Telegram経由でログインする必要があります",
@@ -549,10 +601,76 @@ export const translations = {
     managerContact: "まもなく担当者からご連絡します",
     rights: "全著作権所有。",
     footerDesc: "ルーレットを回してユニークなNFTギフトを獲得しましょう！",
-    common: "コモン",
-    rare: "レア",
-    epic: "エピック",
-    legendary: "レジェンダリー",
+  },
+  
+  hi: {
+    // Header
+    anonymous: "अनाम",
+    spins: "स्पिन",
+    login: "लॉगिन करें",
+    inventory: "इन्वेंटरी",
+    
+    // Roulette
+    title: "एनएफटी गिफ्ट रूलेट",
+    spinButton: "स्पिन करें",
+    spinning: "स्पिन कर रहे हैं...",
+    youWon: "आप जीत गए!",
+    
+    // Recent Wins
+    recentWins: "हाल की जीतें",
+    noWinsYet: "अभी कोई जीत नहीं। पहले बनें!",
+    won: "ने जीता",
+    you: "आप",
+    ago: "पहले",
+    
+    // Inventory
+    inventoryTitle: "इन्वेंटरी",
+    inventoryEmpty: "आपकी इन्वेंटरी खाली है",
+    inventoryEmptyDesc: "गिफ्ट पाने के लिए रूलेट घुमाएं!",
+    withdraw: "निकालें",
+    
+    // Subscription Modal
+    getFreeSpins: "फ्री स्पिन पाएं!",
+    subscribeDesc: "हमारे टेलीग्राम चैनल को सबस्क्राइब करें और पाएं",
+    freeSpins: "फ्री स्पिन",
+    subscribeNote: "सबस्क्राइब करें और तुरंत स्पिन करने की क्षमता पाएं!",
+    subscribeButton: "चैनल को सबस्क्राइब करें",
+    redirectNote: "बटन पर क्लिक करने से आप टेलीग्राम पर रीडायरेक्ट होंगे",
+    
+    // Subscription Banner
+    subscriptionBanner: "चैनल को सबस्क्राइब करें",
+    freeBonusSpins: "3 फ्री स्पिन पाएं",
+    
+    // Login Modal
+    authRequired: "प्रमाणीकरण आवश्यक है",
+    loginToWithdraw: "गिफ्ट निकालने के लिए लॉगिन करें",
+    loginDesc: "गिफ्ट निकालने के लिए आपको टेलीग्राम के माध्यम से लॉगिन करना होगा",
+    loginButton: "टेलीग्राम के माध्यम से लॉगिन करें",
+    safeAuth: "तेजी और सुरक्षित प्रमाणीकरण",
+    
+    // Toasts
+    wonToast: "आप जीते:",
+    addedToInventory: "गिफ्ट इन्वेंटरी में जोड़ा गया",
+    subscribed: "सबस्क्राइब हो गए!",
+    gotSpins: "आपको 3 फ्री स्पिन मिले! (केवल एक बार उपलब्ध)",
+    alreadySubscribed: "आपने पहले ही सबस्क्रिप्शन बोनस पाया है",
+    bonusOnce: "बोनस केवल एक बार उपलब्ध है",
+    noSpins: "आपके पास कोई स्पिन उपलब्ध नहीं है",
+    waitForNext: "अगली फ्री स्पिन देने के लिए प्रतीक्षा करें",
+    authSuccess: "प्रमाणीकरण सफल!",
+    canWithdraw: "अब आप गिफ्ट निकाल सकते हैं",
+    withdrawSent: "निकालने का अनुरोध भेजा गया!",
+    managerContact: "हमारा प्रबंधक जल्द ही आपसे संपर्क करेगा",
+    
+    // Footer
+    rights: "सभी अधिकार सुरक्षित।",
+    footerDesc: "रूलेट घुमाएं और अद्वितीय एनएफटी गिफ्ट जीतें!",
+    
+    // Rarities
+    common: "सामान्य",
+    rare: "दुर्लभ",
+    epic: "महाकाव्य",
+    legendary: "किंवदंती",
   },
 };
 

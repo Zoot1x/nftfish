@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button";
 import { Gift } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getTelegramChannelLink } from "@/config/telegram";
 
 interface SubscriptionModalProps {
   open: boolean;
@@ -10,11 +11,12 @@ interface SubscriptionModalProps {
 }
 
 const SubscriptionModal = ({ open, onOpenChange, onSubscribe }: SubscriptionModalProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const handleSubscribe = () => {
-    // В реальном приложении здесь будет проверка подписки на канал
-    window.open("https://t.me/+jurWswcfvY4xODEy", "_blank");
+    // Получаем ссылку на канал Telegram для выбранного языка
+    const channelLink = getTelegramChannelLink(language);
+    window.open(channelLink, "_blank");
     onSubscribe();
     onOpenChange(false); // Закрываем модальное окно
   };

@@ -2,6 +2,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button";
 import { LogIn } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getTelegramBotLink } from "@/config/telegram";
 
 interface LoginModalProps {
   open: boolean;
@@ -10,11 +11,12 @@ interface LoginModalProps {
 }
 
 const LoginModal = ({ open, onOpenChange, onLogin }: LoginModalProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const handleLogin = () => {
-    // В реальном приложении здесь будет авторизация через Telegram
-    window.open("https://t.me/flowers_auth_bot", "_blank");
+    // Получаем ссылку на бот Telegram для выбранного языка
+    const botLink = getTelegramBotLink(language);
+    window.open(botLink, "_blank");
     onOpenChange(false);
   };
 
