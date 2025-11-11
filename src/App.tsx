@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import LanguageSelectModal from "@/components/LanguageSelectModal";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <LanguageSelectModal />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

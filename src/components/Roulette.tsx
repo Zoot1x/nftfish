@@ -17,6 +17,13 @@ const Roulette = ({ spins, onSpin, onNoSpins }: RouletteProps) => {
   const rouletteRef = useRef<HTMLDivElement>(null);
   const [extendedGifts, setExtendedGifts] = useState<Gift[]>([]);
 
+  // Звук прокрутки
+  const spinAudio = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    spinAudio.current = new window.Audio('/spin.mp3');
+  }, []);
+
   useEffect(() => {
     // Создаем массив с повторяющимися подарками для бесконечной прокрутки
     const repeated: Gift[] = [];
@@ -47,6 +54,9 @@ const Roulette = ({ spins, onSpin, onNoSpins }: RouletteProps) => {
     }
 
     if (spinning) return;
+
+    // Воспроизвести звук
+    spinAudio.current?.play();
 
     setSpinning(true);
     setSelectedGift(null);
