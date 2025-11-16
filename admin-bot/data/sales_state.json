@@ -1,0 +1,29 @@
+{
+  "auto_sales_enabled": false,
+  "sales_log": [
+    {
+      "timestamp": "2025-11-16T04:16:59.538107",
+      "country": "Russia",
+      "amount": 1.0,
+      "status": "completed"
+    },
+    {
+      "timestamp": "2025-11-16T04:16:59.538305",
+      "country": "United States",
+      "amount": 1.0,
+      "status": "completed"
+    },
+    {
+      "timestamp": "2025-11-16T04:16:59.538426",
+      "country": "Germany",
+      "amount": 1.0,
+      "status": "completed"
+    },
+    {
+      "timestamp": "2025-11-16T04:27:11.358540",
+      "country": "us",
+      "amount": 1.0,
+      "status": "completed"
+    }
+  ]
+}

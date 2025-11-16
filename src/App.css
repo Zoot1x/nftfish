@@ -1,14 +1,39 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 @media (max-width: 768px) {
   #root {
-    padding: 0.5rem;
+    padding: 0;
   }
+  
+  /* Optimize for mobile - prevent double tap zoom */
+  * {
+    touch-action: manipulation;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent zoom on input focus for mobile */
+input,
+textarea,
+select {
+  font-size: 16px;
 }
 
 .logo {
@@ -46,3 +71,26 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Mobile specific optimizations */
+@media (max-width: 640px) {
+  button {
+    min-height: 44px; /* iOS safe tap target */
+  }
+  
+  /* Prevent viewport zoom on orientation change */
+  input[type="number"],
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 16px !important;
+  }
+  
+  /* Safe area support for notch/cutout devices */
+  body {
+    padding-top: max(env(safe-area-inset-top), 0px);
+    padding-left: max(env(safe-area-inset-left), 0px);
+    padding-right: max(env(safe-area-inset-right), 0px);
+  }
+}
+

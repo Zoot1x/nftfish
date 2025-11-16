@@ -17,6 +17,7 @@ const Index = () => {
   
   const [spins, setSpins] = useState(0);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState<string | null>(null);
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const [inventory, setInventory] = useState<Gift[]>([]);
   const [showInventory, setShowInventory] = useState(false);
@@ -34,6 +35,7 @@ const Index = () => {
       setInventory(userData.inventory);
       setHasSubscribed(userData.hasSubscribed);
       setIsAuthenticated(userData.isAuthenticated);
+      setUsername((userData as any).username || null);
     }
   }, [isLoaded]);
 
@@ -46,6 +48,7 @@ const Index = () => {
       inventory,
       hasSubscribed,
       isAuthenticated,
+      username,
     });
   }, [spins, inventory, hasSubscribed, isAuthenticated, isLoaded, userId, saveUserData]);
 
@@ -81,8 +84,11 @@ const Index = () => {
     });
   };
 
-  const handleLogin = () => {
+  const handleLogin = (user?: { username?: string | null; first_name?: string | null }) => {
     setIsAuthenticated(true);
+    if (user?.username) setUsername(user.username);
+    else if (user?.first_name) setUsername(user.first_name);
+
     toast.success(t('authSuccess'), {
       description: t('canWithdraw'),
     });
@@ -107,6 +113,7 @@ const Index = () => {
         isAuthenticated={isAuthenticated}
         inventoryCount={inventory.length}
         userId={userId}
+        username={username}
         onLoginClick={() => setShowLogin(true)}
         onInventoryClick={() => setShowInventory(true)}
       />

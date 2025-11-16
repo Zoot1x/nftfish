@@ -15,11 +15,114 @@ interface RecentWinsProps {
 
 // Более реалистичные Telegram-стиль имена
 const FAKE_USERNAMES = [
-  "crypto_guru", "nft_king", "diamond_hands", "moon_walker", "token_master",
-  "gem_collector", "lucky_player", "fortune_seeker", "prize_winner", "jackpot_joe",
-  "coin_master", "treasure_finder", "loot_legend", "bonus_hunter", "win_streak",
-  "blockchain_boss", "nft_ninja", "ether_lover", "hodl_hero", "token_slayer"
-];
+    "@artyom_k",
+    "@nikita.s",
+    "@marina_v",
+    "@dasha.l",
+    "@egor.m",
+    "@alina_r",
+    "@maksim.p",
+    "@kristina.t",
+    "@oleg_d",
+    "@kira.n",
+    "@pavel_a",
+    "@sergey.f",
+    "@yulia_g",
+    "@denis.b",
+    "@sofia_e",
+    "@anton_z",
+    "@ivan.o",
+    "@lera_k",
+    "@roman.c",
+    "@anna_m",
+
+    "@alex.carter",
+    "@emily.stone",
+    "@josh_miller",
+    "@grace_warren",
+    "@daniel.reed",
+    "@olivia_turner",
+    "@ryan.hall",
+    "@chloe_adams",
+    "@ethan.brooks",
+    "@lily_nelson",
+    "@jack.palmer",
+    "@sarah_lane",
+    "@chris.morgan",
+    "@megan.foxwell",
+    "@adam.reed",
+    "@julia_summers",
+    "@ben.collins",
+    "@kate_harris",
+    "@mark.benson",
+    "@amy_blake",
+
+    "@mateo_rivera",
+    "@ana.castillo",
+    "@diego_santos",
+    "@lucia_navarro",
+    "@carlos.mendez",
+    "@sofia_vargas",
+    "@pablo_romero",
+    "@elena.torres",
+    "@javier.rojas",
+    "@camila_cruz",
+
+    "@matteo.rossi",
+    "@laura_bianchi",
+    "@luca.deluca",
+    "@sofia_ricci",
+    "@marco_romano",
+    "@giulia.moretti",
+    "@davide_costa",
+    "@chiara.fontana",
+    "@andrea.gallo",
+    "@alessia_vitale",
+
+    "@lucas_moreau",
+    "@emma.laurent",
+    "@hugo_bernard",
+    "@lea_dupont",
+    "@nathan.caron",
+    "@ines_lambert",
+    "@louis_fabre",
+    "@chloe.robert",
+    "@gabriel_monet",
+    "@julie.marchand",
+
+    "@leon_fischer",
+    "@mia.becker",
+    "@paul.wagner",
+    "@lara_schmitt",
+    "@noah.keller",
+    "@lea_hofmann",
+    "@finn.braun",
+    "@mila_weber",
+    "@jonas_vogel",
+    "@emma.schaefer",
+
+    "@joao_silva",
+    "@ana.ferreira",
+    "@pedro_rocha",
+    "@mariana.lima",
+    "@rafael_alves",
+    "@sofia_martins",
+    "@lucas.duarte",
+    "@julia_soares",
+    "@bruno_pinto",
+    "@beatriz.correia",
+
+    "@alex_monroe",
+    "@mia.carter",
+    "@jason_hale",
+    "@ava.brooks",
+    "@leo_griffin",
+    "@ella_marsh",
+    "@tyler.west",
+    "@maya.clarke",
+    "@adrian_scott",
+    "@nora_james"
+]
 
 const RecentWins = ({ latestWin }: RecentWinsProps) => {
   const { t } = useLanguage();
@@ -65,7 +168,7 @@ const RecentWins = ({ latestWin }: RecentWinsProps) => {
       setWins(prev => [fakeWin, ...prev].slice(0, 5));
     };
 
-    const interval = setInterval(generateFakeWin, Math.random() * 11000 + 15000); // 15-30 секунд
+    const interval = setInterval(generateFakeWin, Math.random() * 7000 + 15000); // 15-30 секунд
 
     return () => clearInterval(interval);
   }, []);

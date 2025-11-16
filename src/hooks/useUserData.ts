@@ -4,9 +4,12 @@ import { Gift } from '@/config/gifts';
 interface UserData {
   userId: string;
   spins: number;
+  tonCoins: number;
   inventory: Gift[];
+  withdrawalGifts: Gift[];
   hasSubscribed: boolean;
   isAuthenticated: boolean;
+  username?: string | null;
   lastUpdated: number;
 }
 
@@ -88,9 +91,12 @@ export const useUserData = () => {
   const getDefaultUserData = (id: string): UserData => ({
     userId: id,
     spins: 0,
+    tonCoins: 0,
     inventory: [],
+    withdrawalGifts: [],
     hasSubscribed: false,
     isAuthenticated: false,
+    username: null,
     lastUpdated: Date.now(),
   });
 
