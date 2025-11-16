@@ -1,7 +1,3 @@
 node_modules/
 dist/
-.env
-.env.local
-backend/.env
-backend/sessions/
-from_session_to_tdata/
+.DS_Store
